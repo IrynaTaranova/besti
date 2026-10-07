@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Besti — професійна косметика, підібрана косметологом</title>
+  <meta name="description" content="Сертифікована професійна косметика Dr. Spiller з підбором від лікаря-косметолога. Догляд для жирної, сухої, чутливої шкіри, акне та розацеа. Безкоштовний тест на тип шкіри.">
+  <meta name="theme-color" content="#FBF8F4">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="home">
+  <div id="site-header"></div>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__text">
+          <span class="eyebrow">Професійна косметика · Dr. Spiller</span>
+          <h1>Догляд, підібраний <em>косметологом</em>, а не рекламою</h1>
+          <p class="lead">Сертифікована професійна косметика, яку лікар-косметолог щодня використовує в салоні. Оберіть свій тип шкіри — і ми покажемо лише те, що справді вам підходить.</p>
+          <div class="hero__cta">
+            <a class="btn" href="quiz.html" data-icon="spark">Підібрати догляд за 2 хв</a>
+            <a class="btn btn--ghost" href="catalog.html">Перейти до каталогу</a>
+          </div>
+          <div class="hero__meta">
+            <div class="avatars"><span>О</span><span>М</span><span>І</span></div>
+            <p><span class="stars">★★★★★</span><br><b>3000+ клієнток</b> довіряють підбору догляду</p>
+          </div>
+        </div>
+        <div class="hero__visual">
+          <div class="hero__img tint"><img id="hero-img" alt="Догляд за шкірою обличчя" fetchpriority="high"></div>
+          <div class="float-card float-card--1"><span class="ic" data-icon="shield"></span><div><b>100% оригінал</b><small>сертифікат на кожен засіб</small></div></div>
+          <div class="float-card float-card--2"><span class="ic" data-icon="doctor"></span><div><b>Лікар-косметолог</b><small>персональний підбір</small></div></div>
+          <div class="hero__mini"><img id="hero-mini" alt="" loading="lazy"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST -->
+    <section class="trust">
+      <div class="container trust__grid">
+        <div class="trust__item"><span class="ic" data-icon="shield"></span><div><b>Тільки оригінал</b><small>напряму від офіційного дистриб’ютора</small></div></div>
+        <div class="trust__item"><span class="ic" data-icon="cert"></span><div><b>Сертифікат на кожен засіб</b><small>документи — за запитом або на сайті</small></div></div>
+        <div class="trust__item"><span class="ic" data-icon="doctor"></span><div><b>Підбір лікарем</b><small>косметолог з медичною освітою</small></div></div>
+        <div class="trust__item"><span class="ic" data-icon="truck"></span><div><b>Доставка 1–2 дні</b><small>Новою поштою по всій Україні</small></div></div>
+      </div>
+    </section>
+
+    <!-- SKIN TYPES -->
+    <section class="section" id="skin">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Крок 1</span>
+            <h2>Оберіть свій <em>тип шкіри</em></h2>
+            <p class="lead">Каталог розділений за потребами шкіри — ви побачите тільки ті засоби, які косметолог рекомендує саме для вас.</p>
+          </div>
+        </div>
+        <div class="skins reveal" id="skins"></div>
+      </div>
+    </section>
+
+    <!-- POPULAR -->
+    <section class="section section--cream">
+      <div class="container slider" id="popular">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Бестселери салону</span>
+            <h2>Популярні <em>засоби</em></h2>
+          </div>
+          <div class="slider__nav">
+            <button class="round-btn" data-prev aria-label="Назад" data-icon="arrowL"></button>
+            <button class="round-btn" data-next aria-label="Вперед" data-icon="arrow"></button>
+          </div>
+        </div>
+        <div class="slider__track reveal"></div>
+        <div class="slider__progress"><span></span></div>
+        <div style="text-align:center;margin-top:36px"><a class="btn btn--ghost" href="catalog.html">Дивитися весь каталог</a></div>
+      </div>
+    </section>
+
+    <!-- QUIZ BANNER -->
+    <section class="section">
+      <div class="container">
+        <div class="qbanner reveal">
+          <div class="qbanner__text">
+            <span class="eyebrow">Безкоштовно · 2 хвилини</span>
+            <h2>Тест «Твій <em>Skin-паспорт</em>»</h2>
+            <p>Дайте відповідь на 7 простих питань — отримайте свій тип шкіри, пояснення від косметолога та готовий ритуал догляду ранок/вечір.</p>
+            <div class="qbanner__steps">
+              <div><b>01</b><span>Відповідаєте на 7 питань</span></div>
+              <div><b>02</b><span>Отримуєте тип шкіри та ритуал</span></div>
+              <div><b>03</b><span>Косметолог перевіряє схему безкоштовно</span></div>
+            </div>
+            <div><a class="btn btn--light" href="quiz.html">Пройти тест <span data-icon="arrow"></span></a></div>
+          </div>
+          <div class="qbanner__media">
+            <img id="quiz-img" alt="" loading="lazy">
+            <div class="qbanner__gift"><span class="ic" data-icon="gift"></span><div><b>−10% на перше замовлення</b><small>промокод після проходження тесту</small></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ADVICE OF THE WEEK -->
+    <section class="section section--lav" id="advice">
+      <div class="container advice">
+        <div class="advice__media reveal">
+          <div class="advice__img tint"><img id="advice-img" alt="Порада косметолога" loading="lazy"></div>
+          <div class="advice__stamp"><span><b id="advice-week">№41</b>порада<br>тижня</span></div>
+        </div>
+        <div class="advice__text reveal">
+          <span class="eyebrow">Порада тижня від косметолога</span>
+          <h2 id="advice-title"></h2>
+          <p class="advice__quote" id="advice-text"></p>
+          <div class="advice__author"><img id="advice-avatar" alt=""><div><b id="advice-name"></b><small id="advice-role"></small></div></div>
+          <div class="mini-product" id="advice-product"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="container about">
+        <div class="about__media reveal">
+          <div class="main tint"><img id="about-img" alt="Лікар-косметолог" loading="lazy"></div>
+          <div class="side"><img id="about-img2" alt="Кабінет косметолога" loading="lazy"></div>
+        </div>
+        <div class="about__text reveal">
+          <span class="eyebrow">Хто підбирає вам догляд</span>
+          <h2><span id="about-name"></span> — <em>лікар-косметолог</em> із власним салоном</h2>
+          <p class="lead">Я відбираю для Besti лише ту косметику, з якою працюю в кабінеті й результат якої бачу на своїх клієнтках. Жодних випадкових брендів — тільки професійні лінії з доведеною ефективністю.</p>
+          <ul class="checklist">
+            <li><span data-icon="check"></span>Вища медична освіта та постійне навчання у брендів</li>
+            <li><span data-icon="check"></span>Кожен засіб протестований у салоні перед появою на сайті</li>
+            <li><span data-icon="check"></span>Безкоштовна консультація — навіть якщо ви нічого не купуєте</li>
+          </ul>
+          <div class="facts" id="facts"></div>
+          <div><a class="link" href="about.html">Детальніше про косметолога <span data-icon="arrow"></span></a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BRANDS -->
+    <section class="section section--cream" id="brands">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Тільки професійні марки</span>
+            <h2>Наші <em>бренди</em></h2>
+          </div>
+        </div>
+        <div class="brands reveal" id="brand-list"></div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATES -->
+    <section class="section" id="certificates">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Прозорість та безпека</span>
+            <h2>Сертифікати та <em>документи</em></h2>
+            <p class="lead">На кожен засіб є сертифікат відповідності та декларація. Натисніть, щоб переглянути, або попросіть менеджера надіслати копію на конкретну баночку.</p>
+          </div>
+        </div>
+        <div class="certs reveal" id="certs"></div>
+      </div>
+    </section>
+
+    <!-- HOW TO ORDER -->
+    <section class="section section--lav">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <div>
+            <span class="eyebrow">Просто та без передоплати</span>
+            <h2>Як <em>замовити</em></h2>
+          </div>
+        </div>
+        <div class="steps reveal">
+          <div class="step"><span class="step__n">01</span><h3>Додайте в кошик</h3><p>Оберіть засоби за типом шкіри або пройдіть тест — ми підкажемо готовий ритуал.</p></div>
+          <div class="step"><span class="step__n">02</span><h3>Менеджер зв’яжеться</h3><p>Залиште номер — ми передзвонимо або напишемо в месенджер, уточнимо деталі та підтвердимо замовлення.</p></div>
+          <div class="step"><span class="step__n">03</span><h3>Отримайте посилку</h3><p>Відправляємо Новою поштою за 1–2 дні. Оплата при отриманні або на рахунок.</p></div>
+        </div>
+        <div class="reveal" style="display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:40px">
+          <p class="muted">Або напишіть нам напряму:</p>
+          <div class="messengers" id="msgs"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Відгуки</span>
+            <h2>Що кажуть <em>клієнтки</em></h2>
+          </div>
+        </div>
+        <div class="reviews reveal" id="reviews"></div>
+      </div>
+    </section>
+
+    <!-- CONSULT -->
+    <section class="section section--tight" id="consult">
+      <div class="container">
+        <div class="consult reveal">
+          <div class="consult__media tint"><img id="consult-img" alt="Консультація косметолога" loading="lazy"></div>
+          <div class="consult__form">
+            <span class="eyebrow">Безкоштовно</span>
+            <h2>Не впевнені, що <em>обрати</em>?</h2>
+            <p class="muted">Залиште контакт — косметолог поставить кілька питань про вашу шкіру та підбере схему домашнього догляду. Без нав’язування покупок.</p>
+            <div id="consult-form"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section--cream" id="faq">
+      <div class="container faq-wrap">
+        <div class="reveal" style="display:grid;gap:18px;align-content:start">
+          <span class="eyebrow">FAQ</span>
+          <h2>Питання та <em>відповіді</em></h2>
+          <p class="muted">Не знайшли відповідь? Напишіть нам — відповідаємо протягом 15 хвилин у робочий час.</p>
+          <div><button class="btn btn--ghost" data-consult="Питання з FAQ">Поставити питання</button></div>
+        </div>
+        <div class="faq reveal" id="faq-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/leads.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/home.js"></script>
+</body>
+</html>

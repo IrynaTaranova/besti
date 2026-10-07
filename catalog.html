@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Каталог — Besti</title>
+  <meta name="description" content="Каталог професійної косметики Besti за типом шкіри: жирна, комбінована, суха, чутлива, акне, розацеа.">
+  <meta name="theme-color" content="#FBF8F4">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="catalog">
+  <div id="site-header"></div>
+
+  <main>
+    <section class="page-head">
+      <div class="container">
+        <nav class="crumbs" aria-label="Хлібні крихти"><a href="index.html">Головна</a><span class="sep">/</span><span>Каталог</span></nav>
+        <h1 id="cat-title" style="font-size:clamp(36px,5vw,60px)">Каталог</h1>
+        <div class="skin-tabs" id="skin-tabs" style="margin-top:24px" role="tablist" aria-label="Тип шкіри"></div>
+        <div id="skin-info"></div>
+      </div>
+    </section>
+
+    <section class="container catalog">
+      <aside class="filters" id="filters" aria-label="Фільтри">
+        <div class="filters__close" style="display:none;justify-content:space-between;align-items:center">
+          <h3 style="font-size:28px">Фільтри</h3>
+          <button class="icon-btn" data-close-filters aria-label="Закрити" data-icon="close"></button>
+        </div>
+        <div>
+          <h4>Тип засобу</h4>
+          <div class="f-list" id="f-cat"></div>
+        </div>
+        <div>
+          <h4>Бренд</h4>
+          <div class="f-list" id="f-brand"></div>
+        </div>
+        <div>
+          <h4>Ціна, ₴</h4>
+          <div class="price-range">
+            <input type="number" id="f-min" placeholder="від" min="0" inputmode="numeric" aria-label="Ціна від">
+            <input type="number" id="f-max" placeholder="до" min="0" inputmode="numeric" aria-label="Ціна до">
+          </div>
+        </div>
+        <button class="btn btn--ghost btn--sm" id="f-reset">Скинути фільтри</button>
+        <button class="btn btn--block filters__apply hide" data-close-filters>Показати товари</button>
+        <div class="filters__help">
+          <b>Сумніваєтесь у виборі?</b>
+          <p>Косметолог безкоштовно підбере догляд під вашу шкіру.</p>
+          <button class="btn btn--light btn--sm" data-consult="Каталог — допомога з вибором">Отримати консультацію</button>
+        </div>
+      </aside>
+      <div class="drawer-backdrop" id="filters-back" data-close-filters></div>
+
+      <div>
+        <div class="toolbar">
+          <span class="toolbar__count" id="count"></span>
+          <div class="toolbar__right">
+            <button class="btn btn--ghost btn--sm filter-btn" id="open-filters" data-icon="filter">Фільтри</button>
+            <select class="select" id="sort" aria-label="Сортування">
+              <option value="pop">Спочатку популярні</option>
+              <option value="asc">Ціна: від низької</option>
+              <option value="desc">Ціна: від високої</option>
+              <option value="new">Новинки</option>
+            </select>
+          </div>
+        </div>
+        <div class="active-filters" id="active"></div>
+        <div class="pgrid" id="grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/leads.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/catalog.js"></script>
+</body>
+</html>
