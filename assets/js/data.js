@@ -19,8 +19,9 @@
     hours: 'Пн–Сб, 9:00–19:00',
     address: 'м. Київ, салон краси Besti',
     promo: 'SKIN10',
-    // Вставте сюди URL вебхука CRM (KeyCRM / SalesDrive / Bitrix) — і заявки підуть туди
-    crmWebhook: ''
+    // URL вебдодатка Google Apps Script (…/exec) — заявки йдуть у Google Таблицю.
+    // Інструкція: integrations/google-sheets/Code.gs. Пізніше можна замінити на вебхук CRM.
+    crmWebhook: 'https://script.google.com/macros/s/AKfycbzDXQLRj6tf3JS2Ai0lcrzWW3lfGO6Zv2-s_5olBUVehxN_qzTa9eNCpQb91vcU5d5N2g/exec'
   };
 
   const COSMETOLOGIST = {

@@ -24,5 +24,10 @@
 Усі форми (замовлення, тест, консультація) йдуть через `submitLead()` у `assets/js/leads.js`.
 Вкажіть URL вебхука CRM у `SITE.crmWebhook` — заявки надсилатимуться туди POST-запитом у JSON.
 
+### Google Таблиця
+Скрипт для таблиці — `integrations/google-sheets/Code.gs` (інструкція всередині файлу).
+Він створює аркуші «Замовлення», «Тест шкіри», «Консультації» зі статусами заявок.
+Після розгортання вебдодатка вставте його URL (`https://script.google.com/macros/s/…/exec`) у `SITE.crmWebhook`.
+
 ## Локальний перегляд
 Відкрийте `index.html` у браузері або запустіть `.claude/serve.ps1` (http://localhost:5500).
