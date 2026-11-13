@@ -1,7 +1,7 @@
 /* BESTI — кошик та оформлення заявки */
 (function () {
   const { D, Cart, Leads, icon, fmt, esc, qs, qsa, productCard, leadForm, bindLeadForm, messengerButtons, toast, hydrateIcons, brandName } = window.Besti;
-  const FREE = 3000;
+  const FREE = D.SITE.freeShipping;
   const root = qs('#cart-root');
   let promo = '';
   try { promo = localStorage.getItem('besti_promo') || ''; } catch (e) { /* ignore */ }
@@ -73,7 +73,7 @@
         <input name="promo" placeholder="Промокод" value="${esc(promo)}" aria-label="Промокод" style="text-transform:uppercase">
         <button class="btn btn--ghost btn--sm" type="submit">Застосувати</button>
       </form>
-      <p class="form-note">${icon('shield')} Оплата після підтвердження: при отриманні або на рахунок</p>
+      <p class="form-note">${icon('shield')} Оплата після підтвердження: накладений платіж (передоплата ${D.SITE.prepay} ₴), на рахунок або в салоні</p>
       <a class="btn btn--block btn--ghost" href="#order-form">Перейти до оформлення</a>`;
     qs('#promo-form').addEventListener('submit', (e) => {
       e.preventDefault();

@@ -157,6 +157,9 @@ a.chip:hover { background: var(--lav-200); }
 
 .logo { display: inline-flex; align-items: center; gap: 10px; flex: none; }
 .logo__mark { width: 34px; height: 34px; }
+.logo__img { height: 50px; width: auto; }
+.logo__img ~ .logo__mark, .logo__img ~ .logo__word { display: none; }
+.logo__full { width: 110px; height: 110px; border-radius: 18px; }
 .logo__word { font-family: var(--f-serif); font-size: 32px; font-weight: 500; font-style: italic; letter-spacing: .01em; color: var(--ink); line-height: 1; }
 .logo__word b { color: var(--lav-600); font-weight: 500; }
 
@@ -861,6 +864,7 @@ a.chip:hover { background: var(--lav-200); }
   .hdr-actions .hide-sm { display: none; }
   .logo__word { font-size: 28px; }
   .logo__mark { width: 28px; height: 28px; }
+  .logo__img { height: 40px; }
   .hero__cta .btn { flex: 1; }
   .hero__img { border-radius: 200px 200px var(--r-lg) var(--r-lg); }
   .float-card { padding: 10px 12px; }

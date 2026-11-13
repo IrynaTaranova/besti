@@ -48,6 +48,10 @@
     sensitive: '<path d="M20 4c-8 0-13 5-14 12l-2 4"/><path d="M6 16c6 0 10-3 11-8"/><path d="M9 12h5"/>',
     acne: '<circle cx="12" cy="12" r="8"/><circle cx="9" cy="10" r="1.2" fill="currentColor"/><circle cx="14.5" cy="9" r=".9" fill="currentColor"/><circle cx="13" cy="14.5" r="1.4" fill="currentColor"/>',
     rosacea: '<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>',
+    normal: '<circle cx="12" cy="12" r="8"/><path d="M8.5 13.5a4 4 0 0 0 7 0"/><circle cx="9.5" cy="10" r=".7" fill="currentColor"/><circle cx="14.5" cy="10" r=".7" fill="currentColor"/>',
+    postacne: '<circle cx="12" cy="12" r="8"/><circle cx="9.5" cy="10.5" r="1.6"/><circle cx="14.5" cy="14" r="1.2"/>',
+    pigment: '<circle cx="12" cy="12" r="8"/><path d="M9 9.5c1 .3 1.6 1 1.4 2-.2 1.1-1.6 1.4-2.3.6M15 13.5c-.9-.1-1.6.6-1.4 1.5"/>',
+    age: '<path d="M6 8c2 1.5 4 1.5 6 0s4-1.5 6 0M6 12c2 1.5 4 1.5 6 0s4-1.5 6 0M6 16c2 1.5 4 1.5 6 0s4-1.5 6 0"/>',
     all: '<path d="M12 3c.6 4.2 2.8 6.4 7 7-4.2.6-6.4 2.8-7 7-.6-4.2-2.8-6.4-7-7 4.2-.6 6.4-2.8 7-7z"/>'
   };
   function icon(name, cls = 'icon') {
@@ -64,6 +68,7 @@
   const page = document.body.dataset.page || '';
 
   const LOGO = `<a href="index.html" class="logo" aria-label="Besti — на головну">
+      <img class="logo__img" src="assets/img/logo.png" alt="Besti" onerror="this.remove()">
       <svg class="logo__mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
         <circle cx="20" cy="20" r="19" stroke="#A897D2" stroke-width="1.2"/>
         <path d="M20 9c3.5 4.2 5.5 7.6 5.5 11.2a5.5 5.5 0 0 1-11 0C14.5 16.6 16.5 13.2 20 9Z" fill="#DFD6F0" stroke="#7562AE" stroke-width="1.2"/>
@@ -78,7 +83,7 @@
     if (!el) return;
     const navActive = (p) => (page === p ? ' is-active' : '');
     el.outerHTML = `
-    <div class="topbar">Безкоштовний підбір догляду від косметолога <span class="sep hide-sm">·</span><span class="hide-sm">Доставка Новою поштою 1–2 дні, від 3000 ₴ — безкоштовно</span></div>
+    <div class="topbar">Безкоштовний підбір догляду від косметолога <span class="sep hide-sm">·</span><span class="hide-sm">Доставка 1–2 дні, від ${D.SITE.freeShipping} ₴ — безкоштовно</span></div>
     <header class="header" id="header">
       <div class="container header__in">
         <button class="icon-btn burger" data-open-menu aria-label="Меню">${icon('menu')}</button>
@@ -189,7 +194,7 @@
       <div class="container">
         <div class="footer__grid">
           <div class="footer__about">
-            ${LOGO}
+            <a href="index.html" class="logo" aria-label="Besti — на головну"><img class="logo__full" src="assets/img/logo-full.png" alt="Besti" width="110" height="110"></a>
             <p>Професійна сертифікована косметика, підібрана лікарем-косметологом. Тільки оригінал від офіційних дистриб’юторів.</p>
             <div class="footer__social">
               <a href="https://instagram.com/${D.SITE.instagram}" target="_blank" rel="noopener" aria-label="Instagram">${icon('instagram')}</a>
@@ -209,6 +214,7 @@
               <li><a href="about.html#delivery">Доставка та оплата</a></li>
               <li><a href="about.html#certificates">Сертифікати</a></li>
               <li><a href="about.html#faq">Питання та відповіді</a></li>
+              <li><a href="oferta.html">Публічна оферта</a></li>
             </ul>
           </div>
           <div>
@@ -222,7 +228,7 @@
           </div>
         </div>
         <div class="footer__bottom">
-          <span>© ${new Date().getFullYear()} Besti. Професійна косметика від косметолога.</span>
+          <span>© ${new Date().getFullYear()} Besti · ${D.SITE.fop.short} · <a href="oferta.html">Публічна оферта</a></span>
           <span>Не є медичною рекомендацією. Перед використанням ознайомтеся з інструкцією.</span>
         </div>
       </div>
@@ -298,7 +304,7 @@
       <div class="pcard__body">
         <span class="pcard__brand">${brandName(p.brand)} · ${p.line}</span>
         <a class="pcard__name" href="product.html?id=${p.id}">${esc(p.name)}</a>
-        <div class="pcard__skins">${p.skin.filter((s) => s !== 'all').slice(0, 3).map((s) => `<span class="chip chip--cream">${skinName(s)}</span>`).join('')}${p.skin.includes('all') ? '<span class="chip chip--cream">Усі типи</span>' : ''}</div>
+        <div class="pcard__skins">${p.skin.filter((s) => s !== 'all' && !(s === 'normal' && p.skin.includes('all'))).slice(0, 3).map((s) => `<span class="chip chip--cream">${skinName(s)}</span>`).join('')}${p.skin.includes('all') ? '<span class="chip chip--cream">Усі типи</span>' : ''}</div>
         <div class="pcard__foot">
           <span class="price">${fmt(p.price)}<small>${p.volume}</small></span>
           <button class="add-btn${added ? ' is-added' : ''}" data-add="${p.id}" aria-label="Додати в кошик">${icon(added ? 'check' : 'plus')}</button>
@@ -383,9 +389,16 @@
         </div>
       </div>
       ${opts.problem ? `<div class="field"><label for="${type}-msg">Що турбує?</label><textarea id="${type}-msg" name="message" placeholder="Наприклад: висипання на підборідді, шкіра стягується після вмивання…"></textarea></div>` : ''}
-      ${opts.delivery ? `<div class="form-row"><div class="field"><label for="${type}-city">Місто</label><input id="${type}-city" name="city" placeholder="Київ"></div><div class="field"><label for="${type}-np">Відділення Нової пошти</label><input id="${type}-np" name="np" placeholder="№ відділення або поштомату"></div></div>
+      ${opts.delivery ? `<div class="field"><label>Доставка</label>
+        <div class="seg" data-delivery>
+          <label><input type="radio" name="delivery" value="Нова пошта" checked><span>Нова пошта</span></label>
+          <label><input type="radio" name="delivery" value="Укрпошта"><span>Укрпошта</span></label>
+          <label><input type="radio" name="delivery" value="Самовивіз"><span>Самовивіз із салону</span></label>
+        </div></div>
+        <div class="form-row" data-address><div class="field"><label for="${type}-city">Місто</label><input id="${type}-city" name="city" placeholder="Івано-Франківськ"></div><div class="field"><label for="${type}-np">Відділення</label><input id="${type}-np" name="np" placeholder="№ відділення або поштомату"></div></div>
+        <p class="form-note hide" data-pickup>${icon('home')} Самовивіз із салону в м. ${D.SITE.city} — менеджер узгодить зручний час.</p>
         <div class="field"><label for="${type}-comment">Коментар</label><textarea id="${type}-comment" name="comment" placeholder="Побажання до замовлення (необов’язково)"></textarea></div>` : ''}
-      <label class="check"><input type="checkbox" name="agree" checked required><span>Погоджуюся на обробку персональних даних для зв’язку зі мною</span></label>
+      <label class="check"><input type="checkbox" name="agree" checked required><span>Погоджуюся на обробку персональних даних та з <a href="oferta.html" target="_blank" style="text-decoration:underline">умовами оферти</a></span></label>
       <button class="btn btn--block" type="submit">${opts.submit || 'Отримати консультацію'} ${icon('arrow')}</button>
       <p class="form-note">${icon('lock')} Ваші дані не передаються третім особам. Без спаму.</p>
     </form>`;
@@ -421,6 +434,12 @@
 
   function bindLeadForm(form, type, extra, onDone) {
     phoneMask(form.elements.phone);
+    const seg = qs('[data-delivery]', form);
+    if (seg) seg.addEventListener('change', () => {
+      const pickup = form.elements.delivery.value === 'Самовивіз';
+      qs('[data-address]', form).classList.toggle('hide', pickup);
+      qs('[data-pickup]', form).classList.toggle('hide', !pickup);
+    });
     qsa('input', form).forEach((i) => i.addEventListener('input', () => i.closest('.field') && i.closest('.field').classList.remove('has-error')));
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -429,6 +448,10 @@
       btn.disabled = true; btn.textContent = 'Надсилаємо…';
       const data = Object.fromEntries(new FormData(form).entries());
       delete data.agree;
+      if (data.delivery) {
+        data.np = data.delivery === 'Самовивіз' ? 'Самовивіз із салону' : data.delivery + (data.np ? ', ' + data.np : '');
+        if (data.delivery === 'Самовивіз') data.city = D.SITE.city;
+      }
       const r = await Leads.submitLead(type, { ...data, ...(extra ? extra() : {}) });
       if (onDone) return onDone(r, data, form);
       form.outerHTML = successBlock(data);

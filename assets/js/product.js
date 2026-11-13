@@ -37,7 +37,7 @@
       </div>
       <div class="pinfo__perks">
         <div class="perk">${icon('cert')}<span>Сертифікат відповідності — <a href="about.html#certificates">переглянути</a></span></div>
-        <div class="perk">${icon('truck')}<span>Доставка Новою поштою 1–2 дні, від 3000 ₴ — безкоштовно</span></div>
+        <div class="perk">${icon('truck')}<span>Доставка НП та Укрпоштою 1–2 дні, від ${D.SITE.freeShipping} ₴ — безкоштовно</span></div>
         <div class="perk">${icon('shield')}<span>Оригінал від офіційного дистриб’ютора</span></div>
         <div class="perk">${icon('chat')}<span>Безкоштовна консультація щодо застосування</span></div>
       </div>
