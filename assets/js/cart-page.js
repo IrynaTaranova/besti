@@ -62,7 +62,7 @@
     qs('#summary').innerHTML = `
       <h3 style="font-size:28px">Підсумок</h3>
       <div class="summary__row"><span>Товари (${Cart.count()})</span><span>${fmt(total)}</span></div>
-      ${disc ? `<div class="summary__row" style="color:var(--lav-700)"><span>Знижка за промокодом ${esc(promo)}</span><span>−${fmt(disc)}</span></div>` : ''}
+      ${disc ? `<div class="summary__row" style="color:var(--brand-700)"><span>Знижка за промокодом ${esc(promo)}</span><span>−${fmt(disc)}</span></div>` : ''}
       <div class="summary__row"><span>Доставка</span><span>${left ? 'за тарифами НП' : 'безкоштовно'}</span></div>
       <div class="summary__row total"><span>Разом</span><span>${fmt(total - disc)}</span></div>
       <div class="ship-note">

@@ -71,10 +71,14 @@
     { key: 'spf', name: 'Сонцезахист' }
   ];
 
+  // active: true — бренд уже має товари в каталозі; інші показуються в рядку брендів на головній
   const BRANDS = [
     { key: 'drspiller', name: 'Dr. Spiller', country: 'Німеччина', since: 'з 1972 року', desc: 'Німецька професійна косметика для салонів і домашнього догляду. Натуральні активні компоненти, власне виробництво в Баварії.', active: true },
-    { key: 'brand2', name: 'Бренд №2', country: 'скоро', since: '', desc: 'Готуємо новий професійний бренд — слідкуйте за оновленнями.', active: false },
-    { key: 'brand3', name: 'Бренд №3', country: 'скоро', since: '', desc: 'Ще один бренд, який косметолог особисто протестувала в салоні.', active: false }
+    { key: 'medik8', name: 'Medik8', country: 'Велика Британія', desc: 'Британська космецевтика з вітаміном А та C.', active: false },
+    { key: 'smart4derma', name: 'Smart4Derma', country: 'Італія', desc: 'Італійська професійна косметика для салонного й домашнього догляду.', active: false },
+    { key: 'innoaesthetics', name: 'Innoaesthetics', country: 'Іспанія', desc: 'Іспанська професійна дерматокосметика: пілінги та домашній догляд.', active: false },
+    { key: 'renew', name: 'Renew', country: 'Ізраїль', desc: 'Ізраїльська професійна косметика для догляду за шкірою.', active: false },
+    { key: 'braderm', name: 'Braderm', country: '', desc: 'Назву потрібно уточнити у власниці.', active: false }
   ];
 
   // Тексти описів — демонстраційні, замініть на офіційні від дистриб’ютора

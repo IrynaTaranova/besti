@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>BESTI — магазин професійної косметики · Івано-Франківськ</title>
   <meta name="description" content="BESTI — магазин професійної косметики Dr. Spiller в Івано-Франківську з підбором від косметолога. Догляд для жирної, сухої, комбінованої та чутливої шкіри, акне, постакне, пігментації. Доставка по Україні, безкоштовний тест на тип шкіри.">
-  <meta name="theme-color" content="#FBF8F4">
+  <meta name="theme-color" content="#FBF6F0">
   <link rel="icon" href="assets/img/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="assets/img/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,23 +21,25 @@
     <section class="hero">
       <div class="container hero__grid">
         <div class="hero__text">
-          <span class="eyebrow">Професійна косметика · Dr. Spiller</span>
-          <h1>Догляд, підібраний <em>косметологом</em>, а не рекламою</h1>
-          <p class="lead">Сертифікована професійна косметика, яку лікар-косметолог щодня використовує в салоні. Оберіть свій тип шкіри — і ми покажемо лише те, що справді вам підходить.</p>
+          <span class="eyebrow">Магазин професійної косметики · Dr. Spiller</span>
+          <h1>Професійний догляд, який <em>підбирає косметолог</em></h1>
+          <p class="lead">Оригінальна німецька косметика, з якою Вікторія працює у своєму салоні. Оберіть тип шкіри або пройдіть тест — і отримайте догляд, який справді підходить вам.</p>
+          <ul class="hero__offers">
+            <li><span class="ic" data-icon="gift"></span><span><b>−10%</b> на перше замовлення</span></li>
+            <li><span class="ic" data-icon="truck"></span><span><b>Безкоштовна доставка</b> від 2000 ₴</span></li>
+            <li><span class="ic" data-icon="shield"></span><span><b>Оригінал</b> із сертифікатом</span></li>
+          </ul>
           <div class="hero__cta">
-            <a class="btn" href="quiz.html" data-icon="spark">Підібрати догляд за 2 хв</a>
-            <a class="btn btn--ghost" href="catalog.html">Перейти до каталогу</a>
-          </div>
-          <div class="hero__meta">
-            <div class="avatars"><span>О</span><span>М</span><span>І</span></div>
-            <p><span class="stars">★★★★★</span><br><b>3000+ клієнток</b> довіряють підбору догляду</p>
+            <a class="btn" href="catalog.html" data-icon="bag">Перейти до каталогу</a>
+            <a class="btn btn--ghost" href="quiz.html" data-icon="spark">Підібрати догляд за 2 хв</a>
           </div>
         </div>
         <div class="hero__visual">
-          <div class="hero__img tint"><img id="hero-img" alt="Догляд за шкірою обличчя" fetchpriority="high"></div>
-          <div class="float-card float-card--1"><span class="ic" data-icon="shield"></span><div><b>100% оригінал</b><small>сертифікат на кожен засіб</small></div></div>
-          <div class="float-card float-card--2"><span class="ic" data-icon="doctor"></span><div><b>Лікар-косметолог</b><small>персональний підбір</small></div></div>
-          <div class="hero__mini"><img id="hero-mini" alt="" loading="lazy"></div>
+          <div class="hero__stage">
+            <img class="hero__product" src="assets/img/products/dr-spiller-q10.png" alt="Крем Dr. Spiller Q10 Oxygen Complex Light" fetchpriority="high">
+          </div>
+          <div class="float-card float-card--1"><span class="ic" data-icon="doctor"></span><div><b>Підбір косметологом</b><small>безкоштовна консультація</small></div></div>
+          <div class="float-card float-card--2"><span class="ic" data-icon="cert"></span><div><b>Dr. Spiller, Німеччина</b><small>офіційний дистриб’ютор</small></div></div>
         </div>
       </div>
     </section>
@@ -52,17 +54,11 @@
       </div>
     </section>
 
-    <!-- SKIN TYPES -->
-    <section class="section" id="skin">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <span class="eyebrow">Крок 1</span>
-            <h2>Оберіть свій <em>тип шкіри</em></h2>
-            <p class="lead">Каталог розділений за потребами шкіри — ви побачите тільки ті засоби, які косметолог рекомендує саме для вас.</p>
-          </div>
-        </div>
-        <div class="skins reveal" id="skins"></div>
+    <!-- BRANDS STRIP -->
+    <section class="brands-strip" aria-label="Бренди">
+      <div class="container brands-strip__in">
+        <span class="brands-strip__label">Професійні бренди в Besti</span>
+        <div class="brands-strip__list" id="brand-strip"></div>
       </div>
     </section>
 
@@ -71,8 +67,8 @@
       <div class="container slider" id="popular">
         <div class="section-head reveal">
           <div>
-            <span class="eyebrow">Бестселери салону</span>
-            <h2>Популярні <em>засоби</em></h2>
+            <span class="eyebrow">Те, що обирають найчастіше</span>
+            <h2>Хіти <em>продажу</em></h2>
           </div>
           <div class="slider__nav">
             <button class="round-btn" data-prev aria-label="Назад" data-icon="arrowL"></button>
@@ -82,6 +78,20 @@
         <div class="slider__track reveal"></div>
         <div class="slider__progress"><span></span></div>
         <div style="text-align:center;margin-top:36px"><a class="btn btn--ghost" href="catalog.html">Дивитися весь каталог</a></div>
+      </div>
+    </section>
+
+    <!-- SKIN TYPES -->
+    <section class="section" id="skin">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Не знаєте, що обрати?</span>
+            <h2>Оберіть свій <em>тип шкіри</em></h2>
+            <p class="lead">Каталог розділений за потребами шкіри — ви побачите тільки ті засоби, які косметолог рекомендує саме для вас.</p>
+          </div>
+        </div>
+        <div class="skins skins--compact reveal" id="skins"></div>
       </div>
     </section>
 
@@ -108,25 +118,8 @@
       </div>
     </section>
 
-    <!-- ADVICE OF THE WEEK -->
-    <section class="section section--lav" id="advice">
-      <div class="container advice">
-        <div class="advice__media reveal">
-          <div class="advice__img tint"><img id="advice-img" alt="Порада косметолога" loading="lazy"></div>
-          <div class="advice__stamp"><span><b id="advice-week">№41</b>порада<br>тижня</span></div>
-        </div>
-        <div class="advice__text reveal">
-          <span class="eyebrow">Порада тижня від косметолога</span>
-          <h2 id="advice-title"></h2>
-          <p class="advice__quote" id="advice-text"></p>
-          <div class="advice__author"><img id="advice-avatar" alt=""><div><b id="advice-name"></b><small id="advice-role"></small></div></div>
-          <div class="mini-product" id="advice-product"></div>
-        </div>
-      </div>
-    </section>
-
     <!-- ABOUT -->
-    <section class="section" id="about">
+    <section class="section section--lav" id="about">
       <div class="container about">
         <div class="about__media reveal">
           <div class="main tint"><img id="about-img" alt="Лікар-косметолог" loading="lazy"></div>
@@ -147,21 +140,38 @@
       </div>
     </section>
 
-    <!-- BRANDS -->
-    <section class="section section--cream" id="brands">
+    <!-- ADVICE OF THE WEEK -->
+    <section class="section" id="advice">
+      <div class="container advice">
+        <div class="advice__media reveal">
+          <div class="advice__img tint"><img id="advice-img" alt="Порада косметолога" loading="lazy"></div>
+          <div class="advice__stamp"><span><b id="advice-week">№41</b>порада<br>тижня</span></div>
+        </div>
+        <div class="advice__text reveal">
+          <span class="eyebrow">Порада тижня від косметолога</span>
+          <h2 id="advice-title"></h2>
+          <p class="advice__quote" id="advice-text"></p>
+          <div class="advice__author"><img id="advice-avatar" alt=""><div><b id="advice-name"></b><small id="advice-role"></small></div></div>
+          <div class="mini-product" id="advice-product"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="section">
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <span class="eyebrow">Тільки професійні марки</span>
-            <h2>Наші <em>бренди</em></h2>
+            <span class="eyebrow">Відгуки</span>
+            <h2>Що кажуть <em>клієнтки</em></h2>
           </div>
         </div>
-        <div class="brands reveal" id="brand-list"></div>
+        <div class="reviews reveal" id="reviews"></div>
       </div>
     </section>
 
     <!-- CERTIFICATES -->
-    <section class="section" id="certificates">
+    <section class="section section--cream" id="certificates">
       <div class="container">
         <div class="section-head reveal">
           <div>
@@ -192,19 +202,6 @@
           <p class="muted">Або напишіть нам напряму:</p>
           <div class="messengers" id="msgs"></div>
         </div>
-      </div>
-    </section>
-
-    <!-- REVIEWS -->
-    <section class="section">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <span class="eyebrow">Відгуки</span>
-            <h2>Що кажуть <em>клієнтки</em></h2>
-          </div>
-        </div>
-        <div class="reviews reveal" id="reviews"></div>
       </div>
     </section>
 

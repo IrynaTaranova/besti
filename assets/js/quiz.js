@@ -187,7 +187,7 @@
         <img src="${D.COSMETOLOGIST.photo}" alt="">
         <div><b>Коментар косметолога · ${D.COSMETOLOGIST.name}</b><p>«${T.text}»</p></div>
       </div>
-      ${states.length ? `<div class="routine__col" style="background:var(--lav-50);border-color:var(--lav-100)">
+      ${states.length ? `<div class="routine__col" style="background:var(--brand-50);border-color:var(--brand-100)">
         <h3 style="font-size:22px">Тип і стан шкіри — різні речі</h3>
         ${states.map((s) => `<p style="font-size:15px"><b>${STATES[s].label[0].toUpperCase() + STATES[s].label.slice(1)}:</b> ${STATES[s].text}</p>`).join('')}
       </div>` : ''}

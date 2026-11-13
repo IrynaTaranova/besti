@@ -3,8 +3,6 @@
   const { D, icon, fmt, esc, qs, productCard, initSlider, certsGrid, faqList, leadForm, bindLeadForm, messengerButtons, brandName, hydrateIcons } = window.Besti;
 
   // зображення
-  qs('#hero-img').src = D.IMAGES.hero;
-  qs('#hero-mini').src = D.IMAGES.heroSmall;
   qs('#quiz-img').src = D.IMAGES.quiz;
   qs('#consult-img').src = D.IMAGES.consult;
   qs('#about-img').src = D.COSMETOLOGIST.photo;
@@ -13,15 +11,15 @@
   // типи шкіри
   qs('#skins').innerHTML = D.SKIN_TYPES.map((s) => {
     const n = D.PRODUCTS.filter((p) => p.skin.includes(s.key)).length;
-    return `<a class="skin-card" href="catalog.html?skin=${s.key}">
+    return `<a class="skin-pill" href="catalog.html?skin=${s.key}">
       <span class="ic">${icon(s.key)}</span>
-      <div><h3>${s.name}</h3><p>${s.short}</p></div>
-      <span class="go"><span class="txt">${n} засобів</span><span class="arr">${icon('arrow')}</span></span>
+      <span class="t"><b>${s.name}</b><small>${s.short}</small></span>
+      <span class="n">${n}</span>
     </a>`;
-  }).join('') + `<a class="skin-card skin-card--quiz" href="quiz.html">
+  }).join('') + `<a class="skin-pill skin-pill--quiz" href="quiz.html">
       <span class="ic">${icon('quiz')}</span>
-      <div><h3>Не знаю свій тип</h3><p>Пройдіть тест — 2 хвилини</p></div>
-      <span class="go"><span class="txt">Пройти тест</span><span class="arr">${icon('arrow')}</span></span>
+      <span class="t"><b>Не знаю свій тип</b><small>Тест за 2 хвилини</small></span>
+      <span class="n">${icon('arrow')}</span>
     </a>`;
 
   // популярні
@@ -53,12 +51,17 @@
   qs('#facts').innerHTML = D.COSMETOLOGIST.facts.map(([b, s]) => `<div class="fact"><b>${b}</b><span>${s}</span></div>`).join('');
 
   // бренди
-  qs('#brand-list').innerHTML = D.BRANDS.map((b) => `<div class="brand-card${b.active ? ' brand-card--main' : ' brand-card--soon'}">
+  const brandList = qs('#brand-list'); // блок брендів прибрано з головної; лишаємо на випадок повернення
+  if (brandList) brandList.innerHTML = D.BRANDS.map((b) => `<div class="brand-card${b.active ? ' brand-card--main' : ' brand-card--soon'}">
       <span class="brand-card__logo">${b.name}</span>
       <div class="brand-card__meta">${b.active ? `<span class="chip">${b.country}</span><span class="chip">${b.since}</span><span class="chip">${D.PRODUCTS.filter((p) => p.brand === b.key).length} засобів</span>` : '<span class="chip chip--outline">Незабаром</span>'}</div>
       <p>${b.desc}</p>
       ${b.active ? `<a class="link" href="catalog.html?brand=${b.key}">Усі засоби ${brandName(b.key)} ${icon('arrow')}</a>` : ''}
     </div>`).join('');
+
+  qs('#brand-strip').innerHTML = D.BRANDS.map((b) => b.active
+    ? `<a href="catalog.html?brand=${b.key}" title="${esc(b.country)}">${esc(b.name)}</a>`
+    : `<span title="${esc(b.country)}">${esc(b.name)}</span>`).join('');
 
   certsGrid(qs('#certs'));
 

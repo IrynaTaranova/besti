@@ -70,9 +70,9 @@
   const LOGO = `<a href="index.html" class="logo" aria-label="Besti — на головну">
       <img class="logo__img" src="assets/img/logo.png" alt="Besti" onerror="this.remove()">
       <svg class="logo__mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-        <circle cx="20" cy="20" r="19" stroke="#A897D2" stroke-width="1.2"/>
-        <path d="M20 9c3.5 4.2 5.5 7.6 5.5 11.2a5.5 5.5 0 0 1-11 0C14.5 16.6 16.5 13.2 20 9Z" fill="#DFD6F0" stroke="#7562AE" stroke-width="1.2"/>
-        <path d="M17.6 21.5a2.6 2.6 0 0 0 2.4 2.4" stroke="#7562AE" stroke-width="1.2" stroke-linecap="round"/>
+        <circle cx="20" cy="20" r="19" stroke="#B8876F" stroke-width="1.2"/>
+        <path d="M20 9c3.5 4.2 5.5 7.6 5.5 11.2a5.5 5.5 0 0 1-11 0C14.5 16.6 16.5 13.2 20 9Z" fill="#F1E3D9" stroke="#662E28" stroke-width="1.2"/>
+        <path d="M17.6 21.5a2.6 2.6 0 0 0 2.4 2.4" stroke="#662E28" stroke-width="1.2" stroke-linecap="round"/>
       </svg>
       <span class="logo__word">Best<b>i</b></span>
     </a>`;
@@ -107,7 +107,7 @@
             </div>
           </div>
           <a class="nav__link${navActive('quiz')}" href="quiz.html">Тест шкіри</a>
-          <a class="nav__link" href="index.html#brands">Бренди</a>
+          <a class="nav__link" href="catalog.html?brand=drspiller">Dr. Spiller</a>
           <a class="nav__link${navActive('about')}" href="about.html">Про косметолога</a>
           <a class="nav__link" href="about.html#certificates">Сертифікати</a>
         </nav>
@@ -129,7 +129,7 @@
         </div>
         <nav class="drawer__nav">
           <a href="catalog.html">Весь каталог ${icon('arrow')}</a>
-          <a href="index.html#brands">Бренди ${icon('arrow')}</a>
+          <a href="catalog.html?brand=drspiller">Dr. Spiller ${icon('arrow')}</a>
           <a href="about.html">Про косметолога ${icon('arrow')}</a>
           <a href="about.html#certificates">Сертифікати ${icon('arrow')}</a>
           <a href="about.html#delivery">Доставка та оплата ${icon('arrow')}</a>
@@ -194,7 +194,7 @@
       <div class="container">
         <div class="footer__grid">
           <div class="footer__about">
-            <a href="index.html" class="logo" aria-label="Besti — на головну"><img class="logo__full" src="assets/img/logo-full.png" alt="Besti" width="110" height="110"></a>
+            <a href="index.html" class="logo" aria-label="Besti — на головну"><img class="logo__full" src="assets/img/logo-full.png" alt="Besti" width="120" height="120"></a>
             <p>Професійна сертифікована косметика, підібрана лікарем-косметологом. Тільки оригінал від офіційних дистриб’юторів.</p>
             <div class="footer__social">
               <a href="https://instagram.com/${D.SITE.instagram}" target="_blank" rel="noopener" aria-label="Instagram">${icon('instagram')}</a>
@@ -307,7 +307,7 @@
         <div class="pcard__skins">${p.skin.filter((s) => s !== 'all' && !(s === 'normal' && p.skin.includes('all'))).slice(0, 3).map((s) => `<span class="chip chip--cream">${skinName(s)}</span>`).join('')}${p.skin.includes('all') ? '<span class="chip chip--cream">Усі типи</span>' : ''}</div>
         <div class="pcard__foot">
           <span class="price">${fmt(p.price)}<small>${p.volume}</small></span>
-          <button class="add-btn${added ? ' is-added' : ''}" data-add="${p.id}" aria-label="Додати в кошик">${icon(added ? 'check' : 'plus')}</button>
+          <button class="buy-btn${added ? ' is-added' : ''}" data-add="${p.id}" aria-label="Додати в кошик">${icon(added ? 'check' : 'bag')}<span>${added ? 'У кошику' : 'Купити'}</span></button>
         </div>
       </div>
     </article>`;
@@ -321,6 +321,7 @@
     const id = b.dataset.add;
     Cart.add(id, 1);
     if (b.classList.contains('add-btn')) { b.classList.add('is-added'); b.innerHTML = icon('check'); }
+    if (b.classList.contains('buy-btn')) { b.classList.add('is-added'); b.innerHTML = icon('check') + '<span>У кошику</span>'; }
     const p = Cart.product(id);
     toast(`<img src="${p.img}" alt=""><span>Додано в кошик<br><b>${esc(p.name)}</b></span><a href="cart.html">Кошик →</a>`);
   });
